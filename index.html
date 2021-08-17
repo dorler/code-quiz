@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Coding Knowledge Check</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <!--Link Scores to store on website and add time countdown feature-->
-        <h6>click here to view scores </h6>
-        <p>Click the button below to begin the quiz</p>
-        <div>Time: <span id="time">75</span></div>
+      <!--Link Scores to store on website and add time countdown feature-->
+      <h6>click here to view scores</h6>
+      <p>Click the button below to begin the quiz</p>
+      <div>Time: <span id="time">75</span></div>
     </header>
     <!-- Quiz form -->
     <div id="app">
-        <div class="start-group">
-            <h2> Coding Knowledge Check </h2>
-            <p>Please take a few minutes to answer the following questions.
-                You will have a total of 60 minutes to answer the questions.
-            </p>
-            <button class="btn" id="beginQuiz" type="submit">Begin Quiz</button>
+      <div class="start-group">
+        <h2>Coding Knowledge Check</h2>
+        <p>
+          Please take a few minutes to answer the following questions. You will
+          have a total of 60 minutes to answer the questions.
+        </p>
+        <button class="btn" id="beginQuiz" type="submit">Begin Quiz</button>
+      </div>
+      <!--Question 1-->
+      <div class="quiz-group hide" id="questions">
+        <h2 class="question-title">Question:</h2>
+        <div class="answer-container">
+          <div class="answer-choice">a</div>
+          <div class="answer-choice">b</div>
+          <div class="answer-choice">c</div>
+          <div class="answer-choice">d</div>
         </div>
-        <!--Question 1-->
-        <div class="quiz-group hide">
-            <h2 class="question-title">Question: </h2>
-            <div class="answer-container">
-                <div class="answer-choice">a</div>
-                <div class="answer-choice">b</div>
-                <div class="answer-choice">c</div>
-                <div class="answer-choice">d</div>
-            </div>
-        </div>
-        <!-- End Quiz Section -->
-        <div class="end-group hide">
-            <h2>Your Score is : <span id="final-score"></span></h2>
-            <p>Enter your initials and save your score!</p>
-            <input id="input-initials"/>
-            <button id="final-submit">Submit</button>
-        </div>
+      </div>
+      <!-- End Quiz Section -->
+      <div class="end-group hide">
+        <h2>Your Score is : <span id="final-score"></span></h2>
+        <p>Enter your initials and save your score!</p>
+        <input id="initials" />
+        <button id="endQuiz">Submit</button>
+      </div>
+
+      <!--Thank you for submitting-->
+      <div id="thank-you" class="hide">
+        <h2>You quiz has been submitted</h2>
+      </div>
     </div>
     <script src="./assets/js/script.js"></script>
-</body>
-
+  </body>
 </html>

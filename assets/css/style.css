@@ -1,3 +1,16 @@
 .hide {
-    display: none;
+  display: none;
+}
+
+.quiz-title {
+  color: green;
+}
+
+.answer-container {
+  background-color: pink;
+  color: white;
+}
+
+.answer-choice {
+  color: green;
 }
