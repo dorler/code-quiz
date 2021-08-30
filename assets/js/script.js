@@ -108,38 +108,42 @@ document
   });
 
 const endQuizGame = () => {
+  clearInterval(timer);
   //show the end quiz
   document.querySelector(".end-group").classList.remove("hide");
   //hide the quiz container
   document.querySelector(".quiz-group").classList.add("hide");
   //display scores
   document.querySelector("#final-score").textContent = score;
+  //hide Timer
+  document.querySelector('header').classList.add("hide");
+  //end game
 };
 
-const initials = document.querySelector("#initials");
+//Define Initial Input and Score and store to local storage
 
 //submit Quiz to local localStorage
 const submitQuiz = function () {
-  localStorage.setItem("initial", "initials");
-  localStorage.setItem("score", "score");
+  //localStorage.setItem("initials", "initials");
+  //localStorage.setItem("score", "score");
   document.querySelector(".end-group").classList.add("hide");
   document.querySelector("#thank-you").classList.remove("hide");
 
-  submitQuiz();
+  //submitQuiz();
+  // get local storage data if it exists
+
+  const initials = document.querySelector("input[name='initials']");
+  const data = JSON.parse(localStorage.getItem("data")) || [];
+
+  // create new data entry with
+  const newData = {
+    name: initials,
+    score: score,
+  };
+
+  data.push(newData);
+
+  localStorage.setItem("data", JSON.stringify(data));
 };
 
-submitQuiz.addEventListener("click", submitQuiz);
-
-// get local storage data if it exists
-
-const data = JSON.parse(localStorage.getItem("data")) || [];
-
-// create new data entry with
-const newData = {
-  name: input,
-  score: score,
-};
-
-data.push(newData);
-
-localStorage.setItem("data", JSON.stringify(data));
+document.querySelector("#endQuiz").addEventListener("click", submitQuiz);

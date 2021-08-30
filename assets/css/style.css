@@ -2,15 +2,25 @@
   display: none;
 }
 
-.quiz-title {
-  color: green;
+body {
+  background-color: white;
+  text-align: center;
 }
 
-.answer-container {
-  background-color: pink;
-  color: white;
+.question-title {
+  color: #694f5d;
 }
 
-.answer-choice {
-  color: green;
+h2 {
+  color: #68a691;
+}
+
+button {
+  border: 1px solid;
+  background-color: #efc7c2;
+}
+
+.quiz-group {
+  margin: 10px 16px;
+  background-color: white;
 }
