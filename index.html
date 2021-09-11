@@ -9,18 +9,23 @@
   </head>
 
   <body>
-    <header>
+    <header class="homePage">
       <!--Link Scores to store on website and add time countdown feature-->
-      <h6>click here to view scores</h6>
+      <h6>
+        click <a href="highScore.html" id="highScore" placeholder="here"> here </a> to view
+        scores
+      </h6>
       <div>Time: <span id="time">75</span></div>
     </header>
     <!-- Quiz form -->
     <div id="app">
-      <div class="start-group">
+      <div class="homePage" id="home">
         <h2>Coding Knowledge Check</h2>
         <p>
           Please take a few minutes to answer the following questions. You will
-          have a total of 60 seconds to answer the questions. <br>When a question is answered incorrectly time will be deducted but when it is answered correctly time will be added. 
+          have a total of 60 seconds to answer the questions. <br />When a
+          question is answered incorrectly time will be deducted but when it is
+          answered correctly time will be added.
         </p>
         <button class="btn" id="beginQuiz" type="submit">Begin Quiz</button>
       </div>
@@ -39,12 +44,13 @@
         <h2>Your Score is : <span id="final-score"></span></h2>
         <p>Enter your initials and save your score!</p>
         <input id="initials" />
-        <button id="endQuiz">Submit</button>
+        <button id="submitQuiz">Submit</button>
       </div>
 
       <!--Thank you for submitting-->
       <div id="thank-you" class="hide">
         <h2>You quiz has been submitted</h2>
+        <button class="btn btn-primary" id="homebtn">Home</button>
       </div>
     </div>
     <script src="./assets/js/script.js"></script>

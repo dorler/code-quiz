@@ -3,6 +3,7 @@ var quizContainer = document.getElementById("quiz");
 var resultsContainer = document.getElementById("results");
 var beginQuiz = document.getElementById("beginQuiz");
 var endQuiz = document.getElementById("endQuiz");
+var li = document.createElement("li");
 //var correctAnswer
 
 var quizQuestions = [
@@ -18,9 +19,9 @@ var quizQuestions = [
     correctAnswer: "JS",
   },
   {
-    question: "what is a prime number2",
-    choices: ["1", "2", "3", "4"],
-    correctAnswer: "2",
+    question: "Which of the following can you NOT change with JavaScript?",
+    choices: ["Element Attribute", "Text Content", "Format", "Meta Data"],
+    correctAnswer: "Format",
   },
   {
     question: "what is a prime number3",
@@ -37,7 +38,7 @@ let time = 75;
 // Start Quiz
 function buildQuiz() {
   //hide the start quiz
-  document.querySelector(".start-group").classList.add("hide");
+  document.querySelector("#home").classList.add("hide");
   //show the quiz container
   document.querySelector(".quiz-group").classList.remove("hide");
   //start the timer
@@ -80,7 +81,10 @@ beginQuiz.addEventListener("click", buildQuiz);
 var questions = document.querySelector("#questions");
 var questionE1 = document.createElement("div", "quizQuestion");
 
+//Set Score to 0
 let score = 0;
+
+//Function to handle answer choice
 const handleAnswerChoice = function (event) {
   //check if the answer is correctAnswer
   const selected = event.target.textContent;
@@ -107,6 +111,8 @@ document
     }
   });
 
+//Define EndQuizGame Function
+
 const endQuizGame = () => {
   clearInterval(timer);
   //show the end quiz
@@ -116,11 +122,9 @@ const endQuizGame = () => {
   //display scores
   document.querySelector("#final-score").textContent = score;
   //hide Timer
-  document.querySelector('header').classList.add("hide");
+  document.querySelector("#time").classList.add("hide");
   //end game
 };
-
-//Define Initial Input and Score and store to local storage
 
 //submit Quiz to local localStorage
 const submitQuiz = function () {
@@ -129,14 +133,12 @@ const submitQuiz = function () {
   document.querySelector(".end-group").classList.add("hide");
   document.querySelector("#thank-you").classList.remove("hide");
 
-  //submitQuiz();
-  // get local storage data if it exists
-
   const initials = document.querySelector("input[name='initials']");
   const data = JSON.parse(localStorage.getItem("data")) || [];
 
   // create new data entry with
   const newData = {
+    id: 0 ,
     name: initials,
     score: score,
   };
@@ -146,4 +148,23 @@ const submitQuiz = function () {
   localStorage.setItem("data", JSON.stringify(data));
 };
 
-document.querySelector("#endQuiz").addEventListener("click", submitQuiz);
+document.querySelector("#submitQuiz").addEventListener("click", submitQuiz);
+
+const homePage = function () {
+  document.querySelector("#thank-you").classList.add("hide");
+  document.querySelector("#home").classList.remove("hide");
+};
+
+document.querySelector("#homebtn").addEventListener("click", homePage);
+
+
+//Retrieve HighScores from Local Storage 
+
+//Display HighScores in Html
+
+const highScores = function () {
+  document.querySelector("")
+ localStorage.getItem("data") 
+ //add highScore to HTML
+
+}
